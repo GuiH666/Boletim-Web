@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/*
+ * Identidade visual do Boletim.
+ * Tudo que é cor ou fonte fica aqui, em um só lugar: para mudar o visual do site,
+ * comece por este bloco. Cada variável --color-* vira utilitários do Tailwind
+ * (ex.: --color-brand → bg-brand, text-brand, border-brand).
+ */
+@theme {
+  --color-ink: #0e1120;          /* fundo da página */
+  --color-panel: #161a2e;        /* cartões e painéis */
+  --color-panel-2: #1c2140;      /* painéis em destaque / hover */
+  --color-line: #262c4d;         /* bordas */
+  --color-text: #e6e9f7;         /* texto principal */
+  --color-muted: #9aa1c4;        /* texto secundário */
+
+  --color-brand: #7c9cff;        /* destaque principal (azul-violeta) */
+  --color-brand-strong: #a3b8ff; /* hover do destaque */
+  --color-brand-soft: #1d2650;   /* fundo suave do destaque */
+
+  --color-ok: #3ddc97;           /* aprovado */
+  --color-ok-soft: #12352b;
+  --color-bad: #ff7b8f;          /* reprovado / erro */
+  --color-bad-soft: #3b1b27;
+
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
