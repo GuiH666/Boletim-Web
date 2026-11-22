@@ -1,5 +1,7 @@
 # Boletim
 
+[![CI](https://github.com/GuiH666/Boletim-Web/actions/workflows/ci.yml/badge.svg)](https://github.com/GuiH666/Boletim-Web/actions/workflows/ci.yml) ![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)
+
 Front-end em **React + TypeScript** para a [API de Gerenciamento de Alunos](https://github.com/GuiH666/API-de-Gerenciamento-de-Alunos). Lista os alunos, mostra o resultado de cada um e cadastra novos, tratando os estados de **carregando, erro e lista vazia** em todas as telas.
 
 <p align="left">
@@ -40,7 +42,9 @@ npm run dev
 
 Para apontar para outra API, copie `.env.example` para `.env` e altere `VITE_API_URL`.
 
-Outros comandos: `npm run typecheck` (confere os tipos) e `npm run build` (gera a versão de produção em `dist/`).
+Outros comandos: `npm test` (testes automáticos), `npm run typecheck` (confere os tipos) e `npm run build` (gera a versão de produção em `dist/`).
+
+Os testes (Vitest) cobrem as regras do formulário e do resultado em `src/lib/`, que precisam continuar iguais às da API. O GitHub Actions roda testes e build a cada push.
 
 ## Estrutura
 
